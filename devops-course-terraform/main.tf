@@ -6,7 +6,7 @@ terraform {
       version = "~> 4.16"
     }
     #Ресурси для сервісу Docker
-/*    docker = {
+    /*    docker = {
       source = "kreuzwerker/docker"
       version = "~> 3.0.1"
     }*/
@@ -17,16 +17,49 @@ terraform {
 provider "aws" {
   region = "us-west-2"
 }
+#Налаштування вхідних та вихідних портів
+resource "aws_security_group" "dev_ops_test" {
+  name         = "test-secutity group"
+  description = "Security for Test"
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
 #Створення пари ключів для доступу через SSH
 resource "aws_key_pair" "dev_ops_test" {
-  key_name = "test-key-pair"
+  key_name   = "test-key-pair"
   public_key = file("/home/vad/Документи/DevOpsStudyng/devops-course-terraform/dev-test.pub")
 }
 #Створення EC2 instance за допомогою AWS
 resource "aws_instance" "dev_ops_test" {
   ami           = "ami-830c94e3"
   instance_type = "t2.micro"
-#Користувацький скрипт по встановленню та запуску Docker  
+  #Користувацький скрипт по встановленню та запуску Docker  
   user_data = <<-EOF
               #!bin/bash
               sudo apt-get update -y
