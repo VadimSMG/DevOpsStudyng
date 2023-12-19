@@ -17,6 +17,32 @@ terraform {
 provider "aws" {
   region = var.aws_region
 }
+#Провайдер для створення випадкових паролей
+provider "random" {}
+#Налаштування внутрішнього ресурсу random_password для генерації паролю
+resource "random_password" "my-test-password" {
+  length           = 18      #Довжина паролю
+  special          = true    #Додавання спеціальних символів
+  upper            = true    #Додавання символів верхнього регістру
+  numeric          = true    #Додавання цифр
+  min_upper        = 2       #Мінімальна кількість символів верхнього регістру
+  min_numeric      = 2       #Мінімальна кількість цифр
+  min_special      = 2       #Мінімальна кількість спеціальних символів
+  override_special = "!@#$%" #Перевизначення вказаних спеціальних символів
+}
+#Створення секрету за допомогою ресусру AWS Sectret Manager
+resource "aws_secretsmanager_secret" "my-test-secret" {
+  name = "my-test-secret"
+}
+#Додавання версії секрету для згенерованого паролю
+resource "aws_secretsmanager_secret_version" "my-test-secret-version" {
+  secret_id = aws_secretsmanager_secret.my-test-secret.id
+  #Використання jsonencode дозволяє конвертувати об'єкт у JSON строку
+  secret_string = jsonencode({
+    #Значення random_password.my-test-password.result - це значення паролю, згенерованого ресурсом random_password
+    password = random_password.my-test-password.result
+  })
+}
 #Налаштування вхідних та вихідних портів
 resource "aws_security_group" "dev_ops_test" {
   name        = "test-secutity group"
