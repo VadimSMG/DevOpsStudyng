@@ -19,6 +19,8 @@ provider "aws" {
 }
 #Провайдер для створення випадкових паролей
 provider "random" {}
+#Використання параметру data для отримання інформації про поточний (current) аккаунт AWS 
+data "aws_caller_identity" "current" {}
 #Налаштування внутрішнього ресурсу random_password для генерації паролю
 resource "random_password" "my-test-password" {
   length           = 18      #Довжина паролю
