@@ -13,7 +13,7 @@ variable "cidr_blocks" {
 variable "ssh_pub_key_path" {
   description = "Path to public SSH key"
   type        = string
-  default     = "/home/vad/Документи/DevOpsStudyng/devops-course-terraform/dev-test.pub"
+  default     = "/home/vad/Документи/DevOpsStudyng/devops-course-terraform-ref/dev-test.pub"
 }
 
 variable "aws_ami" {
