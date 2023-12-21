@@ -1,1 +1,5 @@
 .terraform/
+dev-test.pem
+dev-test.pub
+dev-test
+dev-key.pem
