@@ -12,6 +12,13 @@ terraform {
     }*/
   }
   required_version = ">= 1.2.0"
+  #Конфігурація для викристання існуючого Remote State S3 bucket разом з EC2. У цьому модулі використання змінних не допускається.
+  backend "s3" {
+    bucket         = "dev-stud-buck"
+    key            = "dev-stud-s3.tfstate"
+    region         = "us-west-2"
+    dynamodb_table = "dev-stud-table"
+  }
 }
 #Параметри провайдеру AWS
 provider "aws" {
@@ -49,11 +56,11 @@ resource "aws_secretsmanager_secret_version" "my-test-secret-version" {
 }
 #Створення EC2 instance за допомогою AWS
 resource "aws_instance" "dev_ops_test" {
-  ami           = var.aws_ami
-  instance_type = var.aws_instance_type
-  key_name = "dev-test"
+  ami                    = var.aws_ami
+  instance_type          = var.aws_instance_type
+  key_name               = "dev-test"
   vpc_security_group_ids = [aws_security_group.dev_ops_test.id]
-#Користувацький скрипт по встановленню та запуску Docker  
+  #Користувацький скрипт по встановленню та запуску Docker  
   user_data = file(var.docker_install_script)
 
   tags = {
@@ -64,13 +71,13 @@ resource "aws_instance" "dev_ops_test" {
 resource "aws_security_group" "dev_ops_test" {
   name        = "test-security-group"
   description = "Security for Test"
-  vpc_id = data.aws_vpc.this_vpc.id
+  vpc_id      = data.aws_vpc.this_vpc.id
 
   ingress {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] 
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
@@ -91,7 +98,7 @@ resource "aws_security_group" "dev_ops_test" {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"] 
+    cidr_blocks = ["0.0.0.0/0"]
   }
 }
 #Створення пари ключів для доступу через SSH

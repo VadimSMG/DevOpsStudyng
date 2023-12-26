@@ -16,7 +16,7 @@ variable "ssh_pub_key_path" {
   type        = string
   default     = "/home/vad/Документи/DevOpsStudyng/devops-course-terraform-ref/dev-test.pub"
 }
-#Змінна, що визначає AMI для інстансу, що буде створено. Впливає на тип ОС, що буде встановлено
+#Змінна, що визначає AMI для інстансу, що буде орено. Впливає на тип ОС, що буде встановлено
 variable "aws_ami" {
   description = "AWS instance ami type"
   type        = string
@@ -34,4 +34,3 @@ variable "docker_install_script" {
   type        = string
   default     = "/home/vad/Документи/DevOpsStudyng/devops-course-terraform-ref/docker_install.sh"
 }
-
