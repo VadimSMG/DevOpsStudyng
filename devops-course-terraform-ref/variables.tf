@@ -14,23 +14,23 @@ variable "cidr_blocks" {
 variable "ssh_pub_key_path" {
   description = "Path to public SSH key"
   type        = string
-  default     = "/home/vad/Документи/DevOpsStudyng/devops-course-terraform-ref/dev-test.pub"
+  default     = "./dev-test.pub"
 }
-#Змінна, що визначає AMI для інстансу, що буде орено. Впливає на тип ОС, що буде встановлено
-variable "aws_ami" {
+#Змінна, що визначає AMI для інстансу, що буде орено. Впливає на тип ОС, що буде встановлено. Використовується в модулі ec2
+/*variable "aws_ami" {
   description = "AWS instance ami type"
   type        = string
   default     = "ami-008fe2fc65df48dac"
-}
-#Змінна, що визначає тип інстансу. Впливає на апаратне забезпечення серверу
-variable "aws_instance_type" {
+}*/
+#Змінна, що визначає тип інстансу. Впливає на апаратне забезпечення серверу. Використовується в модулі ec2
+/*variable "aws_instance_type" {
   description = "AWS type of EC2 instance"
   type        = string
   default     = "t2.micro"
-}
-#Змінна, що вказує шлях до користувацького скрипта. У цьому випадку це скрпт для встановлення Docker на Ubuntu Linux
-variable "docker_install_script" {
+}*/
+#Змінна, що вказує шлях до користувацького скрипта. У цьому випадку це скрпт для встановлення Docker на Ubuntu Linux. Використовується в модулі ec2
+/*variable "docker_install_script" {
   description = "Path to Docker install script"
   type        = string
   default     = "/home/vad/Документи/DevOpsStudyng/devops-course-terraform-ref/docker_install.sh"
-}
+}*/

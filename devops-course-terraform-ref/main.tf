@@ -54,8 +54,16 @@ resource "aws_secretsmanager_secret_version" "my-test-secret-version" {
     password = random_password.my-test-password.result
   })
 }
+#Використання звонішнього модулю з налаштуваннями EC2
+module "ec2_module" {
+  source = "./modules/ec2"
+}
+#Зовнішній модуль для налаштування Security Group
+/*module "sg_module" {
+  source = "./modules/sg/"
+}
 #Створення EC2 instance за допомогою AWS
-resource "aws_instance" "dev_ops_test" {
+/*resource "aws_instance" "dev_ops_test" {
   ami                    = var.aws_ami
   instance_type          = var.aws_instance_type
   key_name               = "dev-test"
@@ -66,9 +74,9 @@ resource "aws_instance" "dev_ops_test" {
   tags = {
     Name = "DevOpsLearning"
   }
-}
+}*/
 #Налаштування вхідних та вихідних портів
-resource "aws_security_group" "dev_ops_test" {
+/*resource "aws_security_group" "dev_ops_test" {
   name        = "test-security-group"
   description = "Security for Test"
   vpc_id      = data.aws_vpc.this_vpc.id
@@ -100,7 +108,7 @@ resource "aws_security_group" "dev_ops_test" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-}
+}*/
 #Створення пари ключів для доступу через SSH
 /*resource "aws_key_pair" "dev_ops_test" {
   key_name   = "test-key-pair"
