@@ -1,9 +1,13 @@
 terraform {
   required_providers {
-    #Ресурси для сервісу AWS 
+    #Провайдер для сервісу AWS 
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.16"
+  version = "~> 4.16"
+    }
+    #Провайдер для створення випадкових паролей
+    random = {
+      source  = "hashicorp/random"
     }
     #Ресурси для сервісу Docker
     /*    docker = {
@@ -23,8 +27,6 @@ terraform {
 provider "aws" {
   region = var.aws_region
 }
-#Провайдер для створення випадкових паролей
-provider "random" {}
 #Використання звонішнього модулю з налаштуваннями EC2
 module "ec2_module" {
   source = "./modules/ec2"
@@ -33,12 +35,21 @@ module "ec2_module" {
 module "clb_module" {
   source = "./modules/clb"
 }
+#Зовнішній модуль генерації випадкого паролю
+/*module "rnd_pwd_module" {
+  source = "./modules/rnd-pwd"
+}*/
+#Рерурс для прив'язування EC2 до ціьової групи Load Balancer
+resource "aws_lb_target_group_attachment" "this_attachment" {
+  target_group_arn = module.clb_module.this_tg_arn
+  target_id        = module.ec2_module.aws_instance_id
+}
 #Використання параметру data для отримання інформації про поточний (current) аккаунт AWS 
 data "aws_caller_identity" "current" {}
 #Отримання інформації про всі VPC
-data "aws_vpc" "this_vpc" {}
+#data "aws_vpc" "this_vpc" {}
 #Налаштування внутрішнього ресурсу random_password для генерації паролю
-resource "random_password" "my-test-password" {
+/*resource "random_password" "my-test-password" {
   length           = 18      #Довжина паролю
   special          = true    #Додавання спеціальних символів
   upper            = true    #Додавання символів верхнього регістру
@@ -47,9 +58,9 @@ resource "random_password" "my-test-password" {
   min_numeric      = 2       #Мінімальна кількість цифр
   min_special      = 2       #Мінімальна кількість спеціальних символів
   override_special = "!@#$%" #Перевизначення вказаних спеціальних символів
-}
+}*/
 #Створення секрету за допомогою ресусру AWS Sectret Manager
-resource "aws_secretsmanager_secret" "my-test-secret" {
+/*resource "aws_secretsmanager_secret" "my-test-secret" {
   name = "my-test-secret"
 }
 #Додавання версії секрету для згенерованого паролю
@@ -58,14 +69,9 @@ resource "aws_secretsmanager_secret_version" "my-test-secret-version" {
   #Використання jsonencode дозволяє конвертувати об'єкт у JSON строку
   secret_string = jsonencode({
     #Значення random_password.my-test-password.result - це значення паролю, згенерованого ресурсом random_password
-    password = random_password.my-test-password.result
+    password = module.rnd_pwd_module.secret_pwd
   })
-}
-#Рерурс для прив'язування EC2 до ціьової групи Load Balancer
-resource "aws_lb_target_group_attachment" "this_attachment" {
-  target_group_arn = module.clb_module.this_tg_arn
-  target_id        = module.ec2_module.aws_instance_id
-}
+}*/
 #Зовнішній модуль для налаштування Security Group
 /*module "sg_module" {
   source = "./modules/sg/"

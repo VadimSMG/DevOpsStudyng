@@ -14,5 +14,5 @@ variable "aws_instance_type" {
 variable "docker_install_script" {
   description = "Path to Docker install script"
   type        = string
-  default     = "../../docker_install.sh"
+  default     = "../../docker_install.sh" 
 }
