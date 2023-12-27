@@ -1,4 +1,5 @@
 #!bin/bash
+#Installing Docker
 sudo apt-get update
 sudo apt-get install ca-certificates curl gnupg
               sudo install -m 0755 -d /etc/apt/keyrings
@@ -11,4 +12,6 @@ sudo apt-get install ca-certificates curl gnupg
               sudo apt-get update -y
               sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
               sudo systemctl start docker
-
+#Creating a .env file with secret
+secret_var=$1
+echo "$secret_var" > /.env
