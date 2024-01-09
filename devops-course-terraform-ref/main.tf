@@ -3,11 +3,11 @@ terraform {
     #Провайдер для сервісу AWS 
     aws = {
       source  = "hashicorp/aws"
-  version = "~> 4.16"
+      version = "~> 4.16"
     }
     #Провайдер для створення випадкових паролей
     random = {
-      source  = "hashicorp/random"
+      source = "hashicorp/random"
     }
     #Ресурси для сервісу Docker
     /*    docker = {
@@ -32,18 +32,23 @@ module "ec2_module" {
   source = "./modules/ec2"
 }
 #Використання зовнішнього модуля налаштувань Classic Load Balancer
-module "clb_module" {
-  source = "./modules/clb"
+module "elb_module" {
+  source = "./modules/elb"
 }
 #Зовнішній модуль генерації випадкого паролю
 /*module "rnd_pwd_module" {
   source = "./modules/rnd-pwd"
 }*/
-#Рерурс для прив'язування EC2 до ціьової групи Load Balancer
-resource "aws_lb_target_group_attachment" "this_attachment" {
-  target_group_arn = module.clb_module.this_tg_arn
-  target_id        = module.ec2_module.aws_instance_id
+#Ресурс для прив'язування EC2 до Classic elb
+resource "aws_elb_attachment" "this_attachment" {
+  elb      = module.elb_module.elb_name
+  instance = module.ec2_module.aws_instance_id
 }
+#Рерурс для прив'язування EC2 до ціьової групи Load Balancer
+/*resource "aws_lb_target_group_attachment" "this_attachment" {
+  target_group_arn = module.elb_module.elb_arn
+  target_id        = module.ec2_module.aws_instance_id
+}*/
 #Використання параметру data для отримання інформації про поточний (current) аккаунт AWS 
 data "aws_caller_identity" "current" {}
 #Отримання інформації про всі VPC
