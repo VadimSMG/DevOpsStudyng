@@ -2,7 +2,7 @@
 data "aws_vpc" "this_vpc" {}
 #Налаштування вхідних та вихідних портів
 resource "aws_security_group" "dev_ops_test" {
-  name        = "test-security-group"
+  name        = "this-sg"
   description = "Security for Test"
   vpc_id      = data.aws_vpc.this_vpc.id
 
