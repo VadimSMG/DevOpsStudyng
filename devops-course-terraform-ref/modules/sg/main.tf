@@ -5,6 +5,7 @@ resource "aws_security_group" "dev_ops_test" {
   name        = "this-sg"
   description = "Security for Test"
   vpc_id      = data.aws_vpc.this_vpc.id
+  #security_group_id = "sg-0734a5b35ead8d089"
 
   ingress {
     from_port   = 22
