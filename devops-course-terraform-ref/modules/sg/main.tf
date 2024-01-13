@@ -1,10 +1,11 @@
 #Отримання інформації про всі VPC
 data "aws_vpc" "this_vpc" {}
 #Налаштування вхідних та вихідних портів
-resource "aws_security_group" "dev_ops_test" {
+resource "aws_security_group" "this_sg" {
   name        = "this-sg"
   description = "Security for Test"
-  vpc_id      = data.aws_vpc.this_vpc.id
+  #vpc_id      = data.aws_vpc.this_vpc.id
+  #security_group_id = "sg-0734a5b35ead8d089"
 
   ingress {
     from_port   = 22
@@ -30,7 +31,7 @@ resource "aws_security_group" "dev_ops_test" {
   egress {
     from_port   = 0
     to_port     = 0
-    protocol    = "-1"
+protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
