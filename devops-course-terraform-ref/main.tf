@@ -27,18 +27,62 @@ terraform {
 provider "aws" {
   region = var.aws_region
 }
-#Використання звонішнього модулю з налаштуваннями EC2
+#Використання зовнішнього модулю створення Security Group
+/*module "sg_module" {
+  source = "./modules/sg"
+}*/
+data "aws_vpc" "this_vpc" {}
+
+resource "aws_security_group" "this_sg" {
+  name        = "this-sg"
+  description = "Security for Test"
+  vpc_id      = data.aws_vpc.this_vpc.id
+  #security_group_id = "sg-0734a5b35ead8d089"
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+#Використання зовнішнього модулю з налаштуваннями EC2
 module "ec2_module" {
   source = "./modules/ec2"
+  #Передавання Input Variable у модуль
+  sg_id  = aws_security_group.this_sg.id
 }
 #Використання зовнішнього модуля налаштувань Classic Load Balancer
 module "elb_module" {
   source = "./modules/elb"
+  sg_id  = aws_security_group.this_sg.id
 }
 #Зовнішній модуль генерації випадкого паролю
 /*module "rnd_pwd_module" {
   source = "./modules/rnd-pwd"
 }*/
+
 #Ресурс для прив'язування EC2 до Classic elb
 resource "aws_elb_attachment" "this_attachment" {
   elb      = module.elb_module.elb_name
