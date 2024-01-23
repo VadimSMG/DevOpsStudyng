@@ -73,10 +73,16 @@ module "ec2_module" {
   #Передавання Input Variable у модуль
   sg_id  = aws_security_group.this_sg.id
 }
-#Використання зовнішнього модуля налаштувань Classic Load Balancer
+/*#Використання зовнішнього модуля налаштувань Classic Load Balancer
 module "elb_module" {
   source = "./modules/elb"
   sg_id  = aws_security_group.this_sg.id
+}*/
+#Модуль для Application Load Balancer
+module "alb_module" {
+  source = "./modules/alb"
+  sg-id = aws_security_group.this_sg.id
+  vpc-id = data.aws_vpc.this_vpc.id
 }
 #Зовнішній модуль генерації випадкого паролю
 /*module "rnd_pwd_module" {
@@ -84,43 +90,22 @@ module "elb_module" {
 }*/
 
 #Ресурс для прив'язування EC2 до Classic elb
-resource "aws_elb_attachment" "this_attachment" {
+/*resource "aws_elb_attachment" "this_attachment" {
   elb      = module.elb_module.elb_name
   instance = module.ec2_module.aws_instance_id
-}
-#Рерурс для прив'язування EC2 до ціьової групи Load Balancer
-/*resource "aws_lb_target_group_attachment" "this_attachment" {
-  target_group_arn = module.elb_module.elb_arn
-  target_id        = module.ec2_module.aws_instance_id
 }*/
+#Рерурс для прив'язування EC2 до ціьової групи Load Balancer
+resource "aws_lb_target_group_attachment" "this_attachment" {
+  #Прив'язування EC2 до модулю Classic LB
+  #  target_group_arn = module.elb_module.elb_arn
+  #Прив'язування EC2 до модулю Application LB
+  target_group_arn = module.alb_module.app_tg_arn
+  target_id        = module.ec2_module.aws_instance_id
+}
 #Використання параметру data для отримання інформації про поточний (current) аккаунт AWS 
 data "aws_caller_identity" "current" {}
 #Отримання інформації про всі VPC
 #data "aws_vpc" "this_vpc" {}
-#Налаштування внутрішнього ресурсу random_password для генерації паролю
-/*resource "random_password" "my-test-password" {
-  length           = 18      #Довжина паролю
-  special          = true    #Додавання спеціальних символів
-  upper            = true    #Додавання символів верхнього регістру
-  numeric          = true    #Додавання цифр
-  min_upper        = 2       #Мінімальна кількість символів верхнього регістру
-  min_numeric      = 2       #Мінімальна кількість цифр
-  min_special      = 2       #Мінімальна кількість спеціальних символів
-  override_special = "!@#$%" #Перевизначення вказаних спеціальних символів
-}*/
-#Створення секрету за допомогою ресусру AWS Sectret Manager
-/*resource "aws_secretsmanager_secret" "my-test-secret" {
-  name = "my-test-secret"
-}
-#Додавання версії секрету для згенерованого паролю
-resource "aws_secretsmanager_secret_version" "my-test-secret-version" {
-  secret_id = aws_secretsmanager_secret.my-test-secret.id
-  #Використання jsonencode дозволяє конвертувати об'єкт у JSON строку
-  secret_string = jsonencode({
-    #Значення random_password.my-test-password.result - це значення паролю, згенерованого ресурсом random_password
-    password = module.rnd_pwd_module.secret_pwd
-  })
-}*/
 #Зовнішній модуль для налаштування Security Group
 /*module "sg_module" {
   source = "./modules/sg/"
