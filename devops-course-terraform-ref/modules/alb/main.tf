@@ -19,8 +19,6 @@ resource "aws_lb" "app_lb" {
   subnets = [
     aws_default_subnet.us-west-2a.id,
     aws_default_subnet.us-west-2b.id,
-    #"subnet-0522a3eab7a1452c8",
-    #"subnet-01ed3e93d7e850ddc",
   ] 
   #Ввімкнення захисту від видалення через Terraform
   enable_deletion_protection = true

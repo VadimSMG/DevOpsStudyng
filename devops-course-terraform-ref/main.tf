@@ -84,6 +84,10 @@ module "alb_module" {
   sg-id = aws_security_group.this_sg.id
   vpc-id = data.aws_vpc.this_vpc.id
 }
+#Модуль для бази даних RDS
+module "db_module" {
+  source = "./modules/rds"
+}
 #Зовнішній модуль генерації випадкого паролю
 /*module "rnd_pwd_module" {
   source = "./modules/rnd-pwd"
