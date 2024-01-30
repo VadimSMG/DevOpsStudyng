@@ -17,6 +17,6 @@ variable "docker_install_script" {
   default     = "../../docker_install.sh" 
 }
 #Змінна для призначення ID для Security Group
-variable "sg_id" {
+variable "sg-id" {
   type = string
 }

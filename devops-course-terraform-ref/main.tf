@@ -23,17 +23,27 @@ terraform {
     region = "us-west-2"
   }
 }
+
 #Параметри провайдеру AWS
 provider "aws" {
   region = var.aws_region
 }
-#Використання зовнішнього модулю створення Security Group
-/*module "sg_module" {
-  source = "./modules/sg"
-}*/
+
+#Запит даних VPC
 data "aws_vpc" "this_vpc" {}
 
-resource "aws_security_group" "this_sg" {
+#Запит даних AMI
+data "aws_ami" "this_ami" {
+  most_recent = true
+  owners = ["amazon"]
+
+  filter {
+    name = "name"
+    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+  }
+}
+
+/*resource "aws_security_group" "this_sg" {
   name        = "this-sg"
   description = "Security for Test"
   vpc_id      = data.aws_vpc.this_vpc.id
@@ -66,28 +76,50 @@ resource "aws_security_group" "this_sg" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+} */
+
+#Використання зовнішнього модулю для Security Group
+module "sg_module" {
+  source = "./modules/sg"
+  vpc_id = data.aws_vpc.this_vpc.id
 }
+
 #Використання зовнішнього модулю з налаштуваннями EC2
-module "ec2_module" {
+/*module "ec2_module" {
   source = "./modules/ec2"
   #Передавання Input Variable у модуль
-  sg_id  = aws_security_group.this_sg.id
-}
+  sg-id = module.sg_module.sg_id
+  #sg_id  = aws_security_group.this_sg.id
+  aws_ami = data.aws_ami.this_ami.id
+}*/
+
 /*#Використання зовнішнього модуля налаштувань Classic Load Balancer
 module "elb_module" {
   source = "./modules/elb"
   sg_id  = aws_security_group.this_sg.id
 }*/
+
 #Модуль для Application Load Balancer
-module "alb_module" {
+/*module "alb_module" {
   source = "./modules/alb"
-  sg-id = aws_security_group.this_sg.id
+  sg-id  = module.sg_module.sg_id
+  # sg-id = aws_security_group.this_sg.id
   vpc-id = data.aws_vpc.this_vpc.id
-}
+}*/
+
 #Модуль для бази даних RDS
-module "db_module" {
+/*module "db_module" {
   source = "./modules/rds"
+}*/
+
+#Модуль для Autoscaling Group
+module "asg_module" {
+  source = "./modules/asg"
+  aws_ami = data.aws_ami.this_ami.id
+  #aws_ami = "ami-008fe2fc65df48dac"
+  sg-id = module.sg_module.sg_id
 }
+
 #Зовнішній модуль генерації випадкого паролю
 /*module "rnd_pwd_module" {
   source = "./modules/rnd-pwd"
@@ -98,27 +130,28 @@ module "db_module" {
   elb      = module.elb_module.elb_name
   instance = module.ec2_module.aws_instance_id
 }*/
+
 #Рерурс для прив'язування EC2 до ціьової групи Load Balancer
-resource "aws_lb_target_group_attachment" "this_attachment" {
+/*resource "aws_lb_target_group_attachment" "this_attachment" {
   #Прив'язування EC2 до модулю Classic LB
   #  target_group_arn = module.elb_module.elb_arn
   #Прив'язування EC2 до модулю Application LB
   target_group_arn = module.alb_module.app_tg_arn
   target_id        = module.ec2_module.aws_instance_id
-}
+}*/
+
 #Використання параметру data для отримання інформації про поточний (current) аккаунт AWS 
 data "aws_caller_identity" "current" {}
+
 #Отримання інформації про всі VPC
 #data "aws_vpc" "this_vpc" {}
-#Зовнішній модуль для налаштування Security Group
-/*module "sg_module" {
-  source = "./modules/sg/"
-}
+
 #Створення пари ключів для доступу через SSH
 /*resource "aws_key_pair" "dev_ops_test" {
   key_name   = "test-key-pair"
   public_key = file(var.ssh_pub_key_path)
 }*/
+
 #Інтеграція Docker на EC2 instance та розгортання контейнеру серверу Nginx
 /*provider "docker" {}
 
@@ -136,4 +169,3 @@ resource "docker_container" "nginx" {
 	external = 8000
   }
 }*/
-

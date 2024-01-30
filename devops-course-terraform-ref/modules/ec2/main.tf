@@ -15,7 +15,7 @@ resource "aws_instance" "dev_ops_test" {
   ami                    = var.aws_ami
   instance_type          = var.aws_instance_type
   key_name               = "dev-test"
-  vpc_security_group_ids = [var.sg_id]
+  vpc_security_group_ids = [var.sg-id]
   #Користувацький скрипт по встановленню та запуску Docker  
   #  user_data = var.docker_install_script
   user_data = <<-EOF

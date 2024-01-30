@@ -21,7 +21,7 @@ resource "aws_lb" "app_lb" {
     aws_default_subnet.us-west-2b.id,
   ] 
   #Ввімкнення захисту від видалення через Terraform
-  enable_deletion_protection = true
+  enable_deletion_protection = false
 }
 #Ресурс для ініцалізації цільової групи для LB та приєднання EC2
 resource "aws_lb_target_group" "app_lb_tg" {
