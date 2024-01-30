@@ -3,8 +3,8 @@ module "rnd_pwd_module" {
   source = "../rnd-pwd"
 }
 #Створення секрету за допомогою ресусру AWS Sectret Manager
-resource "aws_secretsmanager_secret" "this-secret" {
-  name = "this-secret"
+resource "aws_secretsmanager_secret" "that-secret" {
+  name = "that-secret"
 }
 #Додавання версії секрету для згенерованого паролю
 resource "aws_secretsmanager_secret_version" "this-secret-version" {
