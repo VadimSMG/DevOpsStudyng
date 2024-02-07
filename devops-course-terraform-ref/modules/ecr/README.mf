@@ -1,0 +1,1 @@
+This module is created for import Amazon Elastic Container Registry

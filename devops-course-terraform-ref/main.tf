@@ -29,6 +29,11 @@ provider "aws" {
   region = var.aws_region
 }
 
+#Ресурc для визначення параметрів імпорту існуючої інфрастуркутри
+import {
+  to = module.ecr_module.aws_ecr_repository.this_ecs
+  id = "405944614123.dkr.ecr.us-west-2.amazonaws.com/this_ecs" 
+}
 #Запит даних VPC
 data "aws_vpc" "this_vpc" {}
 
@@ -120,6 +125,10 @@ module "asg_module" {
   sg-id = module.sg_module.sg_id
 }
 
+#Модулю для імопрту Elastic Container Registry
+module "ecr_module" {
+  source = "./modules/ecr"
+}
 #Зовнішній модуль генерації випадкого паролю
 /*module "rnd_pwd_module" {
   source = "./modules/rnd-pwd"
