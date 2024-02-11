@@ -1,0 +1,180 @@
+195.211.77.140 - - [30/Jul/2022:10:44:01 +0000] "GET / HTTP/1.1" 200 86533 "-" "Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:14 +0000] "GET /.env HTTP/1.1" 200 86533 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:14 +0000] "GET /themes/velocity/assets/css/velocity.css HTTP/1.1" 200 283848 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:14 +0000] "GET /themes/velocity/assets/css/b2bvelocity.css HTTP/1.1" 200 73894 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:14 +0000] "GET /themes/velocity/assets/css/bootstrap.min.css HTTP/1.1" 200 155712 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:14 +0000] "GET /themes/velocity/assets/css/google-font.css HTTP/1.1" 200 8717 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:14 +0000] "GET /themes/velocity/assets/js/jquery.ez-plus.js HTTP/1.1" 200 31253 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:14 +0000] "GET /themes/velocity/assets/js/jquery.min.js HTTP/1.1" 200 88144 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:14 +0000] "GET /themes/velocity/assets/js/velocity.js HTTP/1.1" 200 533011 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:14 +0000] "GET /vendor/webkul/ui/assets/js/ui.js HTTP/1.1" 200 348113 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:15 +0000] "GET /themes/velocity/assets/fonts/font-rango/rango.ttf?o0evyv HTTP/1.1" 200 42876 "https://market.locca.com.ua/themes/velocity/assets/css/velocity.css" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:15 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:15 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:16 +0000] "GET /category-details?category-slug=new-products&count=10 HTTP/1.1" 200 134182 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:16 +0000] "GET /categories HTTP/1.1" 200 1533 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:16 +0000] "GET /category-details?category-slug=featured-products&count=10 HTTP/1.1" 200 31801 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:16 +0000] "GET /category-details?category-slug=igrushki-i-kukli HTTP/1.1" 200 245868 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:17 +0000] "GET /cache/medium/product/155/qgU9CYBCsnxSOfYSPMulQMFm4uZDmXnZ7y0AFd6z.jpg HTTP/1.1" 200 19524 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:17 +0000] "GET /cache/medium/product/145/Ih6L6B3ZbMQuFk2mwzxGjNNbXy8eUMBIk916EyG5.jpeg HTTP/1.1" 200 22942 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:17 +0000] "GET /cache/medium/product/147/XKkDY9OyBCKLyc2hbjO1cDTG266kRCXug6gWSVG3.jpeg HTTP/1.1" 200 27930 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:17 +0000] "GET /cache/medium/product/150/AGzwo6IRBPdmVb5eDNRoGtmqxTedvNazej4bwZLM.jpeg HTTP/1.1" 200 20427 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:18 +0000] "GET /cache/medium/product/144/cbxv0l2vI2IBPa7sA2V6zqJEvMslviHxuopXPejo.jpeg HTTP/1.1" 200 30339 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:18 +0000] "GET /cache/medium/product/152/woNrqK3dXMiD4TcqfvdZ4PqP6iaduO4GBKtczlqm.jpeg HTTP/1.1" 200 24332 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:18 +0000] "GET /cache/medium/product/151/wx5X3U1x0vns8pibkI3AFebMBKRt3y77QlYm4FfR.jpeg HTTP/1.1" 200 20353 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:18 +0000] "GET /cache/medium/product/148/b1bpCLAyi4qwoY8K9VrOyfcAvSghYbAq54lUV2tC.png HTTP/1.1" 200 99175 "https://market.locca.com.ua/.env" "
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:18 +0000] "GET /cache/medium/product/140/BXGn1USeiTY7hmvPmKfKfJR2nwk1W93zEGp3rNHb.jpeg HTTP/1.1" 200 22248 "https://market.locca.com.ua/.env"
+"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:18 +0000] "GET /cache/medium/product/142/V3yYYtUlgCYqrXmifoNFuNVbpp0sdFBMAfcB2rXl.jpeg HTTP/1.1" 200 25298 "https://market.locca.com.ua/.env"
+"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:19 +0000] "GET /cache/medium/product/135/qyjlnzlawbNfhURdle7b6dNKVi9LCmyN9IuqOts6.jpeg HTTP/1.1" 200 18987 "https://market.locca.com.ua/.env"
+"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:19 +0000] "GET / HTTP/1.1" 200 86501 "https://market.locca.com.ua/.env" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (K
+HTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:19 +0000] "GET /cache/medium/product/141/fK6O1TSv6VGvrsHkDVClBcTSNZeSwtgJko9nM4co.jpeg HTTP/1.1" 499 0 "https://market.locca.com.ua/.env" "Moz
+illa/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:19 +0000] "GET /cache/medium/product/134/3K5bXJh8c9RGs2dsLLhNDisbNCqD68itZw0hWtE0.jpeg HTTP/1.1" 499 0 "https://market.locca.com.ua/.env" "Moz
+illa/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:19 +0000] "GET /cache/medium/product/136/QjKeShLc1FY4ih2uJwwafGWE8uFlewiXsjbf2RsP.jpeg HTTP/1.1" 499 0 "https://market.locca.com.ua/.env" "Moz
+illa/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:20 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+(KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:20 +0000] "GET /categories HTTP/1.1" 200 1533 "https://market.locca.com.ua/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.
+36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:20 +0000] "GET /category-details?category-slug=featured-products&count=10 HTTP/1.1" 200 31786 "https://market.locca.com.ua/" "Mozilla/5.0 (Mac
+intosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:20 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+(KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:20 +0000] "GET /category-details?category-slug=new-products&count=10 HTTP/1.1" 200 134182 "https://market.locca.com.ua/" "Mozilla/5.0 (Macinto
+sh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:20 +0000] "GET /category-details?category-slug=igrushki-i-kukli HTTP/1.1" 200 245876 "https://market.locca.com.ua/" "Mozilla/5.0 (Macintosh; I
+ntel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:21 +0000] "GET /cache/medium/product/136/QjKeShLc1FY4ih2uJwwafGWE8uFlewiXsjbf2RsP.jpeg HTTP/1.1" 200 12956 "https://market.locca.com.ua/" "Moz
+illa/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:21 +0000] "GET /cache/medium/product/141/fK6O1TSv6VGvrsHkDVClBcTSNZeSwtgJko9nM4co.jpeg HTTP/1.1" 200 23033 "https://market.locca.com.ua/" "Moz
+illa/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:21 +0000] "GET /cache/medium/product/134/3K5bXJh8c9RGs2dsLLhNDisbNCqD68itZw0hWtE0.jpeg HTTP/1.1" 200 20505 "https://market.locca.com.ua/" "Moz
+illa/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:32 +0000] "GET /page/about-us HTTP/1.1" 200 77458 "https://market.locca.com.ua/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/
+537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:33 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/page/about-us" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleW
+ebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:33 +0000] "GET /categories HTTP/1.1" 200 1533 "https://market.locca.com.ua/page/about-us" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) App
+leWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:33 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/page/about-us" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleW
+ebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:38 +0000] "GET /page/contact-us HTTP/1.1" 200 76624 "https://market.locca.com.ua/page/about-us" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_
+7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:38 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/page/contact-us" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Appl
+eWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:38 +0000] "GET /categories HTTP/1.1" 200 1533 "https://market.locca.com.ua/page/contact-us" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) A
+ppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:39 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/page/contact-us" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Appl
+eWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:41 +0000] "GET /page/about-us HTTP/1.1" 200 77458 "https://market.locca.com.ua/page/contact-us" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_
+7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:42 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/page/about-us" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleW
+ebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:42 +0000] "GET /categories HTTP/1.1" 200 1533 "https://market.locca.com.ua/page/about-us" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) App
+leWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:42 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/page/about-us" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleW
+ebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:45 +0000] "GET /b2b-marketplace/sell HTTP/1.1" 200 75511 "https://market.locca.com.ua/page/about-us" "Mozilla/5.0 (Macintosh; Intel Mac OS X 1
+0_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:45 +0000] "GET /themes/default/assets/css/b2b-marketplace-shop.css HTTP/1.1" 200 21375 "https://market.locca.com.ua/b2b-marketplace/sell" "Moz
+illa/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:46 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/b2b-marketplace/sell" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)
+ AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:46 +0000] "GET /categories HTTP/1.1" 200 1533 "https://market.locca.com.ua/b2b-marketplace/sell" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15
+_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:46 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/b2b-marketplace/sell" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)
+ AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:57 +0000] "GET /igrushki-i-kukli HTTP/1.1" 200 101118 "https://market.locca.com.ua/b2b-marketplace/sell" "Mozilla/5.0 (Macintosh; Intel Mac OS
+ X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:58 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/igrushki-i-kukli" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) App
+leWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:58 +0000] "GET /categories HTTP/1.1" 200 1533 "https://market.locca.com.ua/igrushki-i-kukli" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)
+AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:58 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/igrushki-i-kukli" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) App
+leWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:59 +0000] "GET /category-products/50 HTTP/1.1" 200 246383 "https://market.locca.com.ua/igrushki-i-kukli" "Mozilla/5.0 (Macintosh; Intel Mac OS
+ X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:59 +0000] "GET /cache/medium/product/143/TzYIzDsdpvlESCY3Y4TH7ix2lprp2893KZIXjIni.jpeg HTTP/1.1" 200 23633 "https://market.locca.com.ua/igrush
+ki-i-kukli" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:59 +0000] "GET /cache/medium/product/149/nfrfHSs3nCm6KMb09diMJynMq8cCOwMJ3FguBW2z.jpeg HTTP/1.1" 200 27612 "https://market.locca.com.ua/igrush
+ki-i-kukli" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:44:59 +0000] "GET /cache/medium/product/146/0gXeoXkkt4vrSvhCeZVTWkvq9BdnsGW3ZsGOhEDp.jpeg HTTP/1.1" 200 21351 "https://market.locca.com.ua/igrush
+ki-i-kukli" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:02 +0000] "GET / HTTP/1.1" 200 86533 "https://market.locca.com.ua/igrushki-i-kukli" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebK
+it/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:03 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+(KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:03 +0000] "GET /category-details?category-slug=featured-products&count=10 HTTP/1.1" 200 31801 "https://market.locca.com.ua/" "Mozilla/5.0 (Mac
+intosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:03 +0000] "GET /category-details?category-slug=new-products&count=10 HTTP/1.1" 200 134182 "https://market.locca.com.ua/" "Mozilla/5.0 (Macinto
+sh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:04 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+(KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:04 +0000] "GET /categories HTTP/1.1" 200 1533 "https://market.locca.com.ua/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.
+36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:04 +0000] "GET /category-details?category-slug=igrushki-i-kukli HTTP/1.1" 200 246026 "https://market.locca.com.ua/" "Mozilla/5.0 (Macintosh; I
+ntel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:05 +0000] "GET /konstruktor-derevyannii-bashnya-213-det-serii-krepost HTTP/1.1" 200 127925 "https://market.locca.com.ua/" "Mozilla/5.0 (Macint
+osh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:06 +0000] "GET /themes/default/assets/css/b2b-marketplace.css HTTP/1.1" 200 43069 "https://market.locca.com.ua/konstruktor-derevyannii-bashnya
+-213-det-serii-krepost" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:06 +0000] "GET /cache/large/product/147/XKkDY9OyBCKLyc2hbjO1cDTG266kRCXug6gWSVG3.jpeg HTTP/1.1" 200 66893 "https://market.locca.com.ua/konstru
+ktor-derevyannii-bashnya-213-det-serii-krepost" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:06 +0000] "GET /cache/original/product/147/XKkDY9OyBCKLyc2hbjO1cDTG266kRCXug6gWSVG3.jpeg HTTP/1.1" 200 268513 "https://market.locca.com.ua/kon
+struktor-derevyannii-bashnya-213-det-serii-krepost" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:06 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/konstruktor-derevyannii-bashnya-213-det-serii-krepost" "Mozilla/5.0 (M
+acintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:07 +0000] "GET /cache/small/product/147/XKkDY9OyBCKLyc2hbjO1cDTG266kRCXug6gWSVG3.jpeg HTTP/1.1" 200 6863 "https://market.locca.com.ua/konstruk
+tor-derevyannii-bashnya-213-det-serii-krepost" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:07 +0000] "GET /cache/small/product/147/5T1NcNP2C0CFLI5CZJkCmfIC2vDwAJHf1zr9MdpB.jpeg HTTP/1.1" 200 3338 "https://market.locca.com.ua/konstruk
+tor-derevyannii-bashnya-213-det-serii-krepost" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:07 +0000] "GET /cache/small/product/147/2pDN5yDdJ1pgO19zX4zrmC4fpil9am1bH318THvc.jpeg HTTP/1.1" 200 4321 "https://market.locca.com.ua/konstruk
+tor-derevyannii-bashnya-213-det-serii-krepost" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:07 +0000] "GET /cache/small/product/147/mBBpnw9DyfKJKIo1oubcDacEXGRevOvkJmysOpGC.jpeg HTTP/1.1" 200 7418 "https://market.locca.com.ua/konstruk
+tor-derevyannii-bashnya-213-det-serii-krepost" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:07 +0000] "GET /categories HTTP/1.1" 200 1533 "https://market.locca.com.ua/konstruktor-derevyannii-bashnya-213-det-serii-krepost" "Mozilla/5.0
+ (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:07 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/konstruktor-derevyannii-bashnya-213-det-serii-krepost" "Mozilla/5.0 (M
+acintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:08 +0000] "GET /cache/small/product/147/l3dQbgDjuMRbsn5jRNmPQM4J1wL54iGtn5FP63TX.jpeg HTTP/1.1" 200 6084 "https://market.locca.com.ua/konstruk
+tor-derevyannii-bashnya-213-det-serii-krepost" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:10 +0000] "GET /shop/locca/products HTTP/1.1" 200 438705 "https://market.locca.com.ua/konstruktor-derevyannii-bashnya-213-det-serii-krepost" "
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:10 +0000] "GET /categories HTTP/1.1" 200 1533 "https://market.locca.com.ua/shop/locca/products" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_
+7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:10 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/shop/locca/products" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)
+AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:11 +0000] "GET /cache/large/product/140/BXGn1USeiTY7hmvPmKfKfJR2nwk1W93zEGp3rNHb.jpeg HTTP/1.1" 200 47634 "https://market.locca.com.ua/shop/lo
+cca/products" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:11 +0000] "GET /cache/large/product/141/fK6O1TSv6VGvrsHkDVClBcTSNZeSwtgJko9nM4co.jpeg HTTP/1.1" 200 54099 "https://market.locca.com.ua/shop/lo
+cca/products" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:11 +0000] "GET /cache/large/product/142/V3yYYtUlgCYqrXmifoNFuNVbpp0sdFBMAfcB2rXl.jpeg HTTP/1.1" 200 62655 "https://market.locca.com.ua/shop/lo
+cca/products" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:11 +0000] "GET /cache/large/product/143/TzYIzDsdpvlESCY3Y4TH7ix2lprp2893KZIXjIni.jpeg HTTP/1.1" 200 54699 "https://market.locca.com.ua/shop/lo
+cca/products" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:12 +0000] "GET /cache/large/product/144/cbxv0l2vI2IBPa7sA2V6zqJEvMslviHxuopXPejo.jpeg HTTP/1.1" 200 67238 "https://market.locca.com.ua/shop/lo
+cca/products" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:12 +0000] "GET /cache/large/product/145/Ih6L6B3ZbMQuFk2mwzxGjNNbXy8eUMBIk916EyG5.jpeg HTTP/1.1" 200 51344 "https://market.locca.com.ua/shop/lo
+cca/products" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:12 +0000] "GET /cache/large/product/146/0gXeoXkkt4vrSvhCeZVTWkvq9BdnsGW3ZsGOhEDp.jpeg HTTP/1.1" 200 49576 "https://market.locca.com.ua/shop/lo
+cca/products" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:12 +0000] "GET /cache/large/product/148/b1bpCLAyi4qwoY8K9VrOyfcAvSghYbAq54lUV2tC.png HTTP/1.1" 200 258906 "https://market.locca.com.ua/shop/lo
+cca/products" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:12 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/shop/locca/products" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)
+AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:23 +0000] "GET /customer/login HTTP/1.1" 200 75674 "https://market.locca.com.ua/shop/locca/products" "Mozilla/5.0 (Macintosh; Intel Mac OS X 1
+0_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:23 +0000] "GET /themes/default/assets/css/social-login.css HTTP/1.1" 200 1668 "https://market.locca.com.ua/customer/login" "Mozilla/5.0 (Macin
+tosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:24 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/customer/login" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Apple
+WebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:24 +0000] "GET /categories HTTP/1.1" 200 1533 "https://market.locca.com.ua/customer/login" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Ap
+pleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+85.240.16.64 - - [30/Jul/2022:10:45:24 +0000] "GET /mini-cart HTTP/1.1" 200 27 "https://market.locca.com.ua/customer/login" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Apple
+WebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
