@@ -1,0 +1,22 @@
+apiVersion: apps/v1 #Версія API Kubernetes, що використовужться для створенян ресурсу. 
+kind: Deployment #Тип ресурсу. Цей маніфест використовується для стоврення Deployment.
+metadata:
+  name: {{.Release.Name }}-{{ .Values.name }} #Отримання назви ресурсу з об'єкту .Release.Name Helm.
+  namespace: {{.Values.namespace }} #Отримання простору імен з ресурсу Helm.
+spec:
+  replicas: {{.Values.replicas }}  #Отримання кількості реплік з ресурсу Helm.
+  selector:
+    matchLabels:
+      app: {{.Release.Name }}-{{.Values.name }} #Отримання значення міток, яким повинні відповідати поди.
+  template:
+    metadata:
+      labels:
+        app: {{.Release.Name }}-{{.Values.name}} #Отримання значення міток, яким повинні відповідати шаблони.
+    spec:
+      containers:
+        - name: backend-container
+          image: {{.Values.image.repository}}:{{.Values.image.tag }} #Отримання даних образу, який буде використовуватися для створення контейнерів.
+          ports:
+            - containerPort: {{.Values.containerPort}} #Отримання значення портів для контейнеру.
+#Всі назви змінних вказуть на розташування їх даних у структурі Helm. Наприклад, змінна .Values.image.repository вказує, що її значення знаходиться у файлі values.yaml у розділі image у рядку repository.
+#Змінна .Release.Name містить унікальне ім'я об'єкту, яке зберігається у внутрішній базі Helm, або може будти отримано із зовнішньої бази даних.

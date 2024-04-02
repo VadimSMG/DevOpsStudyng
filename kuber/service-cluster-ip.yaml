@@ -1,0 +1,14 @@
+apiVersion: v1 #Версія API, яка використовується для створення об'єкту.
+kind: Service #Тип об'єкту, що створюється.
+metadata: 
+  name: backend-service #Ім'я об'єкту.
+  namespace: dev #Простір імен. Service працює у тому ж просторі імен, що і Deployment.
+spec:
+  selector:
+    app: backend #Service відстежує ресурси з міткою backend. 
+  type: ClusterIP #Тип сервісу. Cluster IP визначає, що сервіс буде доступний лише всередині кластеру.
+  ports:
+  - protocol: TCP #Протокол надсилання даних на порти.
+    port: 80 #Порт. на якому буде доступни сервіс зовні.
+    targetPort: 5000 # Порт, на якому працює додаток в поді, який відслідковується Service.
+      #    nodePort: 30001

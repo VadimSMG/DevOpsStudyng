@@ -1,0 +1,68 @@
+apiVersion: apps/v1 #Визначення версії API Kubernetes, яка використовується для розгортання цього ресурсу.
+kind: Deployment #Визначення типу ресурсу.
+metadata:
+  name: {{ include "python-api.fullname" . }} #Визначення імені ресурсу за допомогою значення, яке передається від Helm шаблону python-api.fullname.
+  labels:
+    {{- include "python-api.labels" . | nindent 4 }} #Мітки ресурсу, які передається від Helm шаблону python-api.labels.
+spec:
+  {{- if not .Values.autoscaling.enabled }} #Умова, що перевіряє наявність автоматичного масштабування.
+  replicas: {{ .Values.replicaCount }} #Якщо попередня умова не виконується, то використовується значення .Values.replicaCount.
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "python-api.selectorLabels" . | nindent 6 }} #Використовується шаблон для відповідних міток python-api.selectorLabels. 
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }} #Шаблон .Values.podAnnotations для додавання аннотацій до ресурсу.
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "python-api.labels" . | nindent 8 }} #Викорстовується шаблон python-api.labels міток для ресурсу.
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec: #Спецфікація контейнеру.
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "python-api.serviceAccountName" . }} #Визначається ім'я облікового запису служби, яке буде використовуватися для контейнеру.
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }} #Ім'я контейнеру, яке використовує ім'я назву самої Helm chart.
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}" #Визначається образ, що буде використовуватися для контейнера. Отримує значення .Values.image.repository та .Values.image.tag.
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          livenessProbe:
+            {{- toYaml .Values.livenessProbe | nindent 12 }} #Визначає характеристики проб роботи та готовності контейнера.
+          readinessProbe:
+            {{- toYaml .Values.readinessProbe | nindent 12 }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }} #Визначаться ресурси контейнеру (CPU, RAM тощо). Викорстовується значення .Values.resources.
+          {{- with .Values.volumeMounts }} #Визначається точка монтування томів.
+          volumeMounts:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+      {{- with .Values.volumes }}
+    volumes: #Визначаються томи для контейнеру. 
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
