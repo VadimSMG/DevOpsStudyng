@@ -1,0 +1,21 @@
+name: dev #Змінна, що вказує ім'я подів у кластері {.Values.name}.
+namespace: dev #Змінна, що вказує порoстір імен: {.Values.namespaces}.
+replicas: 1 #Змінна,Ю що вказує кількість реплік: {.Values.replicas}.
+image:
+  repository: localhost:5000/backend #Змінна, що визначає ім'я образу docker, який використовується при розгортанні: {.Values.image.repository}.
+  tag: test #Змінна, яка визначає мітку образу docker: {.Values.image.tag}.
+containerPort: 5000 #Змінна, що визначає відкритий порт для контейнеру: {.Values.containerPort}.
+#Визначення змінних для створення сервісу для кластеру.
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 5000
+#Визначення змінних параметрів для створення облікового запису служби. Яко не потрібно створювати обліковий запис служби, то вказуємо false у рядку create.
+serviceAccount:
+  create: false
+#Визначення правил ingress для проекту. Якщо ці правила не планується викорстовуати, то вказується значення false.
+ingress:
+  enabled: false
+#Визначення параметрів автоскеллінгу. Якщо автоскелінг не використовується, то вказується значення false.
+autoscaling:
+  enabled: false
