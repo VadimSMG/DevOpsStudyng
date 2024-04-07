@@ -1,0 +1,60 @@
+name: dev
+namespace: dev
+replicas: 1
+containers: #Розділ, який містить дані для кожного контейнеру, що буде розгорнутий на поді.
+  usersApi:
+    name: users-api
+    image:
+      repository: dev-ops-dosvit/microservice-app/users-api
+      tag: latest
+    port: 8083
+  todosApi:
+    name: todos-api
+    image:
+      repository: dev-ops-dosvit/microservice-app/todos-api
+      tag: latest
+    port: 8082
+  logMessageProcessor:
+    name: log-message-processor
+    image:
+      repository: dev-ops-dosvit/microservice-app/log-message-processor
+      tag: latest
+    port: 6379
+  frontend:
+    name: frontend
+    image:
+      repository: dev-ops-dosvit/microservice-app/frontend
+      tag: latest
+    port: 8080
+  authApi:
+    name: auth-api
+    image:
+      repository: dev-ops-dosvit/microservice-app/auth-api
+      tag: latest
+    port: 8081
+  zipkin:
+    name: zipkin
+    image:
+      repository: openzipkin/zipkin
+      tag: latest
+    port: 9411
+secretName: micro-app-secret
+#Визначення змінних для створення сервісу для кластеру.
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 5000
+#Визначення змінних параметрів для створення облікового запису служби. Яко не потрібно створювати обліковий запис служби, то вказуємо false у рядку create.
+serviceAccount:
+  create: false
+#Визначення правил ingress для проекту. Якщо ці правила не планується викорстовуати, то вказується значення false.
+ingress:
+  name: gitlab-ingress
+  host: repository.gitlab.com
+  path: /
+  backendService:
+    name: gitlab-service
+    path:
+#Визначення параметрів автоскеллінгу. Якщо автоскелінг не використовується, то вказується значення false.
+autoscaling:
+  enabled: false
