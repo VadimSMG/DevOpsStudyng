@@ -15,6 +15,7 @@ spec:
     spec:
       containers:
         - name: {{ .Values.containers.usersApi.name }}
+          #imagePullPolicy: IfNotPresent
           image: {{ .Values.containers.usersApi.image.repository }}:{{ .Values.containers.usersApi.image.tag }} #Отримання даних образу, який буде використовуватися для створення контейнерів.
           ports:
             - containerPort: {{ .Values.containers.usersApi.port }} #Отримання значення портів для контейнеру.

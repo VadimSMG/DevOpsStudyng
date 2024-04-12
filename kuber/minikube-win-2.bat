@@ -2,65 +2,69 @@ REM Параметр вказує виводити (on) чи ні (off) резу
 @echo off
 
 REM Визначення значень змінних для використання у скрипті.
-set IMGNAME=backend:test
-set DOCKERDIR=..\Python-hw\
-set KUBERDIR=..\kuber\
-set NAMESPC=dev
-set DOCKER_PASSWORD=13V31a13D%GL
-set DOCKER_USERNAME=vadimsmg@gmail.com
-set CI_IMAGE=registry.gitlab.com/dev-ops-dosvit/microservice-app
-REM Виведеня повідомлення про запуск служби Docker та запуск служби.
-echo Starting Docker Service...
-net start docker
+echo "Please, check that you run this script from local Helm project repository."
+echo "Setting script variables."
+$VM_DRIVER = Read-Host "Chouse your VM eviroment for minkube: 1 - VirtualBox, 2 - Docker"
+switch ($VM_DRIVER) {
+    "1" {
+        echo "Starting VirtualBox..."
+        $MINIKUBE_DRIVER = "virtualbox"
+        Start-Process -FilePath "C:\Program Files\Oracle\VirtualBox\VirtualBox.exe"
+        }
+    "2" {
+        echo "Starting Docker Desktop..."
+        $MINIKUBE_DRIVER = "docker"
+        Start-Process -FilePath "C:\Program Files\Docker\Docker\Docker Desktop.exe"
+        }
+}
+REM $HELM_PJ_DIR = Read-Host "Input path to your Helm project dir:" REM Запит на введення розташування шаблонів проекту Helm.
+$HELM_PJ_DIR = "C:\Users\vadim\Навчання\DevOps\DevOpsStudyng\kuber\micro-app"
+$DOCKER_PASSWORD = Read-Host "Input GitLab token:" REM Запит на введеня значення токену досутпу до реєстру образів Gitlab.
+REM $DOCKER_USERNAME = Read-Host "Input GitLab e-maIl:"
+$DOCKER_USERNAME = "vadimsmg@gmail.com"
+REM $GITLAB_REG = Read-Host "Input your GitLab private URL:"
+$GITLAB_REG = "https://registry.gitlab.com"
+REM Визначння назв просторів імен для кластеру.
+REM $NAMESPACES = Read-Host "Input your namespaces names (separated by commas):"
+$NAMESPACES = "dev", "stage", "prod"
+REM Запуск кластеру minikube.
+echo "Starting minikube..."
+minikube start --driver=$MINIKUBE_DRIVER --no-vtx-check
 
-REM Вказування використовувати вбудований Docker minikube замість локального.
-REM minikube docker-env --shell cmd
-REM Перезапуск командного рядку у сценарії з використання поточного файлу сценарію.
-REM start "" "%~f0"
-REM exit
+echo "Setting up cluster namespaces..."
+REM Цикл, що сворює namespaces у кластері.
+foreach ($names in $NAMESPACES) {
+    kubectl create namespace $names
+}
+REM kubectl create namespace $NAMESPACES[0]
+REM kubectl create namespace $NAMESPACES[1]
+REM kubectl create namespace $NAMESPACES[2]
 
-REM Виведення повідомлення про запуск служби minikube та її запуск.
-echo Starting minikube...
-minikube start --driver=docker
+echo "Creating secrets for namespaces..."
+$SECRET_NAME = Read-Host "Input your kubernetes secret name"
+REM  Цикл, що створює секрет для кожного namespace.
+foreach ($name in $NAMESPACES) {    
+    kubectl create secret docker-registry $SECRET_NAME -n $name --docker-server=$GITLAB_REG --docker-username=$DOCKER_USERNAME --docker-password=“$DOCKER_PASSWORD” --docker-email=$DOCKER_USER
+}
+REM kubectl create secret docker-registry $SECRET_NAME -n $NAMESPACES[0] --docker-server=$GITLAB_REG --docker-username=$DOCKER_USER --docker-password=“$DOCKER_PASSWORD” --docker-email=$DOCKER_USER
+REM kubectl create secret docker-registry $SECRET_NAME -n $NAMESPACES[1] --docker-server=$GITLAB_REG --docker-username=$DOCKER_USER --docker-password=“$DOCKER_PASSWORD” --docker-email=$DOCKER_USER
+REM kubectl create secret docker-registry $SECRET_NAME -n $NAMESPACES[2] --docker-server=$GITLAB_REG --docker-username=$DOCKER_USER --docker-password=“$DOCKER_PASSWORD” --docker-email=$DOCKER_USER
 
-REM Визначення змінних середовища для Docker.
-REM @FOR /F "tokens=*" %%i IN ('minikube docker-env') DO @%%i
-REM @FOR - запуск цикла виконання для кожного рядка команди, яка знаходиться у IN (). Для цього файлу це minikube docker-env.
-REM "tokens=*" - параметр, що вказує розбирати всі токени (слова) в кажному рядку.
-REM %%i - змінна, яка представляє кожен рядок для циклу FOR.
-REM IN ('minikube docker-env') параметр, що вказує команду, яку необхідн обробляти у циклі FOR.
-REM DO %%i - вказується, що для кожного рядку, виконання команди 'minikube docker-env' виконується команда, що збережена у змінній %%i. Ключове слово @ призначене для виведення результатів роботи цієї команди.
-
-REM Побудова образу Docker, використовуючи внутрышный реєстр minikube.
-REM echo /Building Docker image...
-REM cd %DOCKERDIR%
-REM docker run -d -p 5000:5000 --restart=always --name registry registry:2
-REM docker build -t %IMGNAME%
-REM docker tag %IMGNAME% localhost:5000/%IMGNAME%
-REM docker push localhost:5000/%IMGNAME%
-
-REM Виконання авторизації за допомогою docker login для внутрішнього Docker minikube.
-minikube ssh "echo %DOCKER_PASSWORD% | docker login --username %DOCKER_USERNAME% --password-stdin registry.gitlab.com"
-REM Отримання образів з реєстру GitLab.
-minikube ssh "docker pull %CI_IMAGE%"
-minikube ssh "docker pull %CI_IMAGE%/users-api:latest"
-minikube ssh "docker pull %CI_IMAGE%/todos-api:latest"
-minikube ssh "docker pull %CI_IMAGE%/log-message-processor:latest"
-minikube ssh "docker pull %CI_IMAGE%/frontend:latest"
-minikube ssh "docker pull %CI_IMAGE%/auth-api:latest"
-REM Перевірка наявеності образів у minikube.
-minikube ssh "docker images"
-
-REM Створення просторів імен Kubernetes.
-echo Setting up Kubernetes namespaces...
-cd %KUBERDIR%
-kubectl create namespace dev
-kubectl create namespace stage
-kubectl create namespace prod
-
-REM Встановлення Helm діаграм для кожного середовища.
-echo Installing Helm charts...
-cd .\python-api\
-helm install -f values-dev.yaml api-app-dev .\
-helm install -f values-stage.yaml api-app-stage .\
-helm install -f values-prod.yaml api-app-prod .\
+echo "Creating Kubernetes claster via Helm charts..."
+cd $HELM_PJ_DIR
+$HELM_PJ_NAME = Read-Host "Input name of your project"
+REM Цикл, що створює масив з іменами конфігурацій для Helm.
+foreach ($name in $NAMESPACES) {
+    $HELM_NAMES += $HELM_PJ_NAME + "-" + $name
+}
+$HELM_VALUES = @()
+REM Цикл, що створює масив для імен файлів values для Helm.
+foreach ($name in $NAMESPACES) {
+    $HELM_VALUES += Read-Host "Input Helm values filename for" $name "environment (sample: values-dev.yaml)"
+}
+echo "Creating cluster for dev namespace."
+helm install -f $HELM_VALUES[0] $HELM_NAMES[0] .
+echo "Creating cluster for stage namespace"
+helm install -f $HELM_VALUES[1] $HELM_NAMES[1] .
+echo "Creating cluster for prod namespace"
+helm install -f $HELM_VALUES[2] $HELM_NAMES[2] .

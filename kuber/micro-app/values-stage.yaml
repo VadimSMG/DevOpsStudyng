@@ -1,6 +1,6 @@
-name: dev
-namespace: dev
-replicas: 1
+name: stage
+namespace: stage
+replicas: 2
 containers: #Розділ, який містить дані для кожного контейнеру, що буде розгорнутий на поді.
   usersApi:
     name: users-api
