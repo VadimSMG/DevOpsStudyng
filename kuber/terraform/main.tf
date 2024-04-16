@@ -6,7 +6,7 @@
   }
 }*/
 provider "kubernetes" {
-  config_path = "%USERNAME%/.kube/config" #Шлях до файлу конфігурації кластеру.
+  config_path = "C:/Users/vadim/.kube/config" #Шлях до файлу конфігурації кластеру.
 }
 
 resource "kubernetes_pod" "test-pod" { #Використання вбудованого ресурсу для Kubernetes.

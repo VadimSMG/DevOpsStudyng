@@ -17,28 +17,52 @@ spec:
         - name: {{ .Values.containers.usersApi.name }}
           #imagePullPolicy: IfNotPresent
           image: {{ .Values.containers.usersApi.image.repository }}:{{ .Values.containers.usersApi.image.tag }} #Отримання даних образу, який буде використовуватися для створення контейнерів.
+          resources: #Розділ, у якому вказується використанян ресурсыв подом.
+            limits: #Розділ, у якому вказуються обмеження по ресурсам, які под не може перевищувати.
+                memory: "128M" #Цей рядок вказує, що под не повинен використовувати більше, ніж 128 МбОЗУ.
+                  #cpu: "250m" #Цей рядок вказує, що под не повинен використовувати більше, ніж 250 milicpu (що еквіваленто 0,25 ядра ЦП).
           ports:
             - containerPort: {{ .Values.containers.usersApi.port }} #Отримання значення портів для контейнеру.
 #Всі назви змінних вказуть на розташування їх даних у структурі Helm. Наприклад, змінна .Values.image.repository вказує, що її значення знаходиться у файлі values.yaml у розділі image у рядку repository.
 #Змінна .Release.Name містить унікальне ім'я об'єкту, яке зберігається у внутрішній базі Helm, або може будти отримано із зовнішньої бази даних.
         - name: {{ .Values.containers.todosApi.name }}
           image: {{ .Values.containers.todosApi.image.repository }}:{{ .Values.containers.todosApi.image.tag }} #Отримання даних образу, який буде використовуватися для створення контейнерів.
+          resources:
+            limits:
+              memory: "128M"
+                #cpu: "250m"
           ports:
             - containerPort: {{ .Values.containers.todosApi.port }}
         - name: {{ .Values.containers.logMessageProcessor.name }}
           image: {{ .Values.containers.logMessageProcessor.image.repository }}:{{ .Values.containers.logMessageProcessor.image.tag }} #Отримання даних образу, який буде використовуватися для створення контейнерів.
+          resources:
+            limits:
+              memory: "128M"
+                #cpu: "250m"
           ports:
             - containerPort: {{.Values.containers.logMessageProcessor.port}}        
         - name: {{.Values.containers.frontend.name}}
           image: {{.Values.containers.frontend.image.repository}}:{{.Values.containers.frontend.image.tag }} #Отримання даних образу, який буде використовуватися для створення контейнерів.
+          resources:
+            limits:
+              memory: "128M"
+                #cpu: "250m"
           ports:
             - containerPort: {{.Values.containers.frontend.port}}
         - name: {{.Values.containers.authApi.name}}
           image: {{.Values.containers.authApi.image.repository}}:{{.Values.containers.authApi.image.tag }} #Отримання даних образу, який буде використовуватися для створення контейнерів.
+          resources:
+            limits:
+              memory: "128M"
+                #cpu: "250m"
           ports:
             - containerPort: {{.Values.containers.authApi.port}}
         - name: {{.Values.containers.zipkin.name}}
           image: {{.Values.containers.zipkin.image.repository}}:{{.Values.containers.zipkin.image.tag }} #Отримання даних образу, який буде використовуватися для створення контейнерів.
+          resources:
+            limits:
+              memory: "128M"
+                #cpu: "250m"
           ports:
             - containerPort: {{.Values.containers.zipkin.port}}
       imagePullSecrets:

@@ -17,15 +17,29 @@ switch ($VM_DRIVER) {
         Start-Process -FilePath "C:\Program Files\Docker\Docker\Docker Desktop.exe"
     }
 }
-$HELM_PJ_DIR = Read-Host "Input path to your Helm project dir:" REM Запит на введення розташування шаблонів проекту Helm.
+$HELM_PJ_DIR = Read-Host "Input path to your Helm project dir:" # Запит на введення розташування шаблонів проекту Helm.
 #$HELM_PJ_DIR = "C:\Users\vadim\Навчання\DevOps\DevOpsStudyng\kuber\micro-app"
 $DOCKER_PASSWORD = Read-Host "Input GitLab token:" # Запит на введеня значення токену досутпу до реєстру образів Gitlab.
 $DOCKER_USERNAME = Read-Host "Input GitLab e-maIl:"
 #$DOCKER_USERNAME = "vadimsmg@gmail.com"
 #$GITLAB_REG = Read-Host "Input your GitLab Container Registry URL:"
 $GITLAB_REG = "https://registry.gitlab.com"
-# Визначння назв просторів імен для кластеру.
-$NAMESPACES = Read-Host "Input your namespaces names (separated by commas):"
+# Визначння масиву для збереження назв просторів імен для кластеру.
+$NAMESPACES = @()
+# Створення циклу, який буде додавати введені дані у масив, поки не буде введено END.
+while ($true) {
+	$input = Read-Host "Input your namespace name (or type 'END' for break)"
+	# Умова виходу з циклу запросу даних.
+	if ($input -eq "END") {
+		break
+	}
+	# Додавання значення у створений масив.
+	$NAMESPACES += $input
+}
+# Виведення створеного маисву імен.
+Write-Host "Your kubernetes namespaces are:" $NAMESPACES
+
+#$NAMESPACES = Read-Host "Input your namespaces names (separated by commas: "dev", "stage", "prod"):"
 #$NAMESPACES = "dev", "stage", "prod"
 
 #Запуск кластеру minikube.
